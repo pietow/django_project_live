@@ -1,13 +1,24 @@
 <!--templates/home.html-->
 {% extends "base.html" %}
-
 {% block content %}
+<h1>BLA</h1>
+
+
 <h1>Homepage</h1>
 <h2>{{ key2 }}</h2>
 <h3>{{ key1 }}</h3>
 <p>{{ key3|lower }}</p>
+<p>{{ key3|upper }}</p>
 <p>{{ key3|lower|add:' World' }}</p>
 <p>{{ first|add:second }}</p>
 <div>{{ today|date:"d M Y"}}</div>
+<div>{{ notes|safe }}</div>
+<!-- <div>{{ js_inject|safe }}</div> -->
+<div>{{ js_inject|escape }}</div>
+
+
+{% load my_tags %}
+{% hello_world 'again'%}
+
 {% endblock content %}
 

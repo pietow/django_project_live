@@ -1,5 +1,5 @@
 from django.test import SimpleTestCase
-from django.urls import reverse
+from django.urls import reverse, resolve
 
 # Create your tests here.
 
@@ -10,6 +10,7 @@ class HomePageTests(SimpleTestCase):
 
     def test_url_available_by_name(self):
         response = self.client.get(reverse('home'))
+        #print(resolve('/').url_name)
         self.assertEqual(response.status_code, 200)
 
     def test_template_name_correct(self):
