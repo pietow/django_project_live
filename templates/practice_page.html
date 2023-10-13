@@ -1,0 +1,40 @@
+{% load my_reverse %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <h1>Task 1. For loop and if tag </h1>
+    {% for number in list_of_numbers %}
+      {% if number|divisibleby:2 %}
+          <li style="color: blue;">{{number}}</li>
+      {% else %}
+          <li style="color: red;">{{number}}</li>
+      {% endif %}
+    {% endfor %}
+
+
+    <h1>Task 2. String Filters</h1>
+    <p>{{ greeting|upper }}</p>
+    <p>{{ greeting|slice:"::-1" }}</p>
+    <p>{{ greeting|reverse }}</p>
+
+    <h1>Task 3. Dictionary and String Concatenation:</h1>
+    <p>{{ user_info.first_name|add:' '|add:user_info.last_name }}</p>
+    <p>{{ user_info.first_name }} {{ user_info.last_name }}</p>
+
+    <h1>Task 4. Conditional Display:</h1>
+    {% if is_vip %}
+      <strong>VIP Member</strong>
+    {% else %}
+      <p>Regular Member</p>
+    {% endif %}
+
+    <h1>Task 5. Safe Filter</h1>
+    <p>{{notes|escape}}</p>
+    <p>{{notes|safe}}</p>
+
+</body>
+</html>
